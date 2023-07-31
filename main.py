@@ -1,2 +1,4 @@
 #Python
-#practica
+#Ejercicio 1: 
+print('Hola Mundo.')
+
