@@ -47,9 +47,8 @@ c = n//m
 r = n%m
 
 print(str(n) + " entre " +  str(m) + " da un cociente " + str(c) + " y un resto " + str(r))'''
-
+#*********************************************Calculadora****************************************
 def Menu():
-    """Funcion que Muestra el Menu"""
     print ("""************
     Calculadora
     ************
@@ -59,6 +58,7 @@ def Menu():
     3) Multiplicacion
     4) Division
     """)
+  
 def suma(a,b):
   return a+b
 
@@ -70,27 +70,29 @@ def multiplicacion(a,b):
 
 def division(a,b):
   if b==0:
-    print("Error, Division entre 0")
+    print("Error, División entre 0")
   else:
     return a/b
 
 
 def Calculadora():    
     Menu()
-    opcion = int(input("Selecione Opcion\n"))
+    opcion = int(input("Selecione Opción\n"))
     
-    x = float(input("Ingrese Numero\n"))
-    y = float(input("Ingrese Otro Numero\n"))
+    x = float(input("Ingrese Primer Número\n"))
+    y = float(input("Ingrese Segundo Número\n"))
+  
     if (opcion==1):
         print ("La Suma es:", suma(x,y))
     elif(opcion==2):
         print ("La Resta es:", resta(x,y))
         
     elif(opcion==3):
-        print ("La Multiplicacion es:", multiplicacion(x,y))
+        print ("La Multiplicación es:", multiplicacion(x,y))
         
     elif(opcion==4):
-        print ("La Division es:", division(x,y))
+        print ("La División es:", division(x,y))
 
 
 Calculadora()
+#*******************************************************************************************************
