@@ -48,7 +48,7 @@ r = n%m
 
 print(str(n) + " entre " +  str(m) + " da un cociente " + str(c) + " y un resto " + str(r))'''
 #*********************************************Calculadora****************************************
-
+'''
 def Menu():
     print ("""************
     Calculadora
@@ -99,5 +99,71 @@ Calculadora()
 #*******************************************************************************************************
 #****************************************ctaAhorro**********************************************
 
+def intereses(inv):
+  d= inv
+  if (d >0 and d<1000000):
+    return 2
+  elif(d>=1000000 and d < 2000000):
+    return 5
+  else: 
+    return 7
 
+def calBalance(int, inv):
+  n= int
+  d = inv
+  return round((d*(1+(n/100))),2)
   
+def ctaAhorro():
+  #inversion,interes,b1,b2,b3 = 0.0
+  inversion = float(input("Ingrese el valor de la inversión: "))
+  interes=intereses(inversion)
+  b1=calBalance(interes,inversion)
+  b2= calBalance(interes,b1)
+  b3= calBalance(interes,b2)
+  print("Balance año 1: " + str(b1) + " Balance año 2: " + str(b2) + " Balance año 3: " + str(b3))
+
+ctaAhorro()'''
+#******************************************************************************
+#*****************************areasFig****************************************
+'''def areaTriangulo(b,a):
+  return(b*a)/2
+
+def areaCuadrado(bc,ac):
+  return bc*ac
+
+def areaCirculo(r):
+  return(3.14169*(r**2))
+
+def areaFig():
+  area=0.0
+  figura=""
+  figura = input("Escriba la figura a la que se le desea calcular el area: ")
+  
+  if (figura.lower()=="triangulo"):
+    base=0.0
+    altura=0.0
+    base = float(input("ingrese la base:"))
+    altura= float(input("Ingrese la altura: "))
+    area = areaTriangulo(base,altura)
+    print("El area del triangulo es: ", area)
+
+areaFig()
+
+def maximo(a,b):
+  if x>y:
+    return x
+  else:
+    return y
+ 
+def minimo(a,b):
+  if x<y:
+    return x
+  else:
+    return y
+ 
+#programa principal
+x=int(input("Un número: "))
+y=int(input("Otro número: "))
+print(maximo(x-3, minimo(x+2, y-5)))
+'''
+
