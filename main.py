@@ -148,22 +148,22 @@ def areaFig():
     print("El area del triangulo es: ", area)
 
 areaFig()
-
+'''
 def maximo(a,b):
-  if x>y:
-    return x
+  if a>b:
+    return a
   else:
-    return y
+    return b
  
 def minimo(a,b):
-  if x<y:
-    return x
+  if a<b:
+    return a
   else:
-    return y
+    return b
  
 #programa principal
 x=int(input("Un número: "))
 y=int(input("Otro número: "))
 print(maximo(x-3, minimo(x+2, y-5)))
-'''
+
 
