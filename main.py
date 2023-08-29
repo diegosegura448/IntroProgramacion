@@ -148,22 +148,14 @@ def areaFig():
     print("El area del triangulo es: ", area)
 
 areaFig()
-'''
-def maximo(a,b):
-  if a>b:
-    return a
-  else:
-    return b
- 
-def minimo(a,b):
-  if a<b:
-    return a
-  else:
-    return b
- 
-#programa principal
-x=int(input("Un número: "))
-y=int(input("Otro número: "))
-print(maximo(x-3, minimo(x+2, y-5)))
 
+
+def porcentaje(x,y):
+  return (w*(1+(z/100)))
+ 
+w=int(input("Ingrese valor: "))
+z=int(input("Ingrese porcentaje: "))
+print(round(porcentaje(w-20000,z+2),2))
+
+'''
 
