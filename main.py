@@ -149,13 +149,7 @@ def areaFig():
 
 areaFig()
 
-
-def porcentaje(x,y):
-  return (w*(1+(z/100)))
- 
-w=int(input("Ingrese valor: "))
-z=int(input("Ingrese porcentaje: "))
-print(round(porcentaje(w-20000,z+2),2))
-
 '''
+
+
 
