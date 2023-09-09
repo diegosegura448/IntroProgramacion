@@ -58,6 +58,7 @@ def Menu():
     2) Resta
     3) Multiplicacion
     4) Division
+    5) Salir
     """)
   
 def suma(a,b):
@@ -158,7 +159,7 @@ areaFig()
 2010 no es bisiesto
 2000 es bisiesto
 1900 no es bisiesto
-'''
+
 
 def bisiesto():
   anio = int(input("Escriba un año: "))
@@ -169,7 +170,69 @@ def bisiesto():
 
 bisiesto()
 
-#2
+'''
+
+def Menu():
+    print ("""************
+    Calculadora
+    ************
+    Menu
+    1) Suma
+    2) Resta
+    3) Multiplicacion
+    4) Division
+    5) Salir
+    """)
+  
+def suma():
+  a = float(input("Ingrese Primer Número a sumar\n"))
+  b = float(input("Ingrese Segundo Número a sumar\n"))
+  return a+b
+
+def resta():
+  c = float(input("Ingrese Primer Número a restar\n"))
+  d = float(input("Ingrese Segundo Número a restar\n"))
+  return c-d
+
+def multiplicacion():
+  e = float(input("Ingrese Primer Número a multiplicar\n"))
+  f = float(input("Ingrese Segundo Número a multiplicar\n"))
+  return e*f
+
+def division():
+  g = float(input("Ingrese Numerador\n"))
+  h = float(input("Ingrese Denominador\n"))
+  if h==0:
+    print("Error, División entre 0")
+  else:
+    return g/h
 
 
+def Calculadora():    
+    Menu()
+    opcion=0    
+  
+    while opcion != 5:  
+      
+      opcion = int(input("Selecione Opción\n"))     
+    
+      if (opcion==1):
+          print ("La Suma es:", suma())
+      elif(opcion==2):
+          print ("La Resta es:", resta())
+          
+      elif(opcion==3):
+          print ("La Multiplicación es:", multiplicacion())
+          
+      elif(opcion==4):
+          print ("La División es:", division())
 
+      elif(opcion == 5):
+        print ("Gracias por usar la calculadora! bye!.")
+        break
+        
+      else:
+        print ("Opción invalida intente de nuevo")
+
+
+Calculadora()
