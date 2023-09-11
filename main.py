@@ -248,8 +248,8 @@ def compra():
           print("Valor no válido.")
       else:
           total+=monto
-      monto=float(input("Valor de una venta: $"))
-  if total>1000:
+      monto=float(input("Valor de la venta: $"))
+  if total>1000000:
       total-=total*0.1
   print("Valor total a pagar: $", total)
 
