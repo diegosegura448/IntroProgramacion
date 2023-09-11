@@ -171,7 +171,8 @@ def bisiesto():
 bisiesto()
 
 '''
-
+"""
+#Calculadora While
 def Menu():
     print ("""************
     Calculadora
@@ -229,10 +230,27 @@ def Calculadora():
 
       elif(opcion == 5):
         print ("Gracias por usar la calculadora! bye!.")
-        break
+        #break
         
       else:
         print ("Opción invalida intente de nuevo")
 
 
 Calculadora()
+
+"""
+# Descuento While
+def compra():
+  total=0
+  monto=float(input("Valor de la venta: $"))
+  while monto!=0:
+      if monto<0:
+          print("Valor no válido.")
+      else:
+          total+=monto
+      monto=float(input("Valor de una venta: $"))
+  if total>1000:
+      total-=total*0.1
+  print("Valor total a pagar: $", total)
+
+compra()
