@@ -171,7 +171,7 @@ def bisiesto():
 bisiesto()
 
 '''
-"""
+'''
 #Calculadora While
 def Menu():
     print ("""************
@@ -238,7 +238,8 @@ def Calculadora():
 
 Calculadora()
 
-"""
+'''
+
 # Descuento While
 def compra():
   total=0
@@ -254,3 +255,4 @@ def compra():
   print("Valor total a pagar: $", total)
 
 compra()
+
