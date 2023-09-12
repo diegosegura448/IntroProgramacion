@@ -239,7 +239,7 @@ def Calculadora():
 Calculadora()
 
 '''
-
+'''
 # Descuento While
 def compra():
   total=0
@@ -255,4 +255,154 @@ def compra():
   print("Valor total a pagar: $", total)
 
 compra()
+'''
+'''
+#adivinar mejorado
+import random
 
+def adivinaFeature()  :
+
+  numero_secreto = random.randint(1, 100)
+  intentos = 0
+  max_intentos = 5
+  
+  while intentos < max_intentos:
+      intento = int(input("Adivina el número: "))
+      intentos += 1
+      if intento == numero_secreto:
+          print("¡Correcto! Has adivinado el número en", intentos, "intentos.")
+          break
+      elif intento < numero_secreto:
+          print("El número es mayor.")
+      else:
+          print("El número es menor.")
+  else:
+      print("Agotaste tus", max_intentos, "intentos. El número secreto era", numero_secreto)
+
+adivinaFeature()
+'''
+
+'''
+#caracteres
+def Impcaracter():
+  cadena = input("Ingrese una palabra o frase: ")
+  
+  for caracter in cadena:
+      print(caracter)
+
+Impcaracter()
+'''
+'''
+#Factorial
+def factorial():
+  numero = int(input("Ingrese un número: "))
+  factorial = 1
+  
+  for i in range(1, numero + 1):
+      factorial *= i
+
+  print("El factorial de", numero, "es", factorial)
+
+factorial()
+'''
+'''
+#tabla de multiplicar
+def tablaM():
+  n = int(input("Ingrese un número: "))
+  
+  for i in range(1, 11):
+      resultado = n * i
+      print(n, "x", i, "=", resultado)
+
+tablaM()
+'''
+'''
+#adivinar número
+import random
+def adivina():
+  numero_secreto = random.randint(1, 100)
+  adivinado = False
+  
+  while not adivinado:
+      intento = int(input("Adivina el número: "))
+      if intento == numero_secreto:
+          print("¡Correcto! Has adivinado el número.")
+          adivinado = True
+      elif intento < numero_secreto:
+          print("El número es mayor.")
+      else:
+          print("El número es menor.")
+
+adivina()
+'''
+'''
+#Triqui
+def inicializar_tablero():
+    tablero = [[' ' for _ in range(3)] for _ in range(3)]
+    return tablero
+
+def imprimir_tablero(tablero):
+    filaT=0
+    for fila in tablero:
+        filaT=filaT+1
+        print("|".join(fila))
+        if filaT <= 2:
+           print("-" * 5)
+
+def realizar_jugada(tablero, jugador, fila, columna):
+    if tablero[fila][columna] == ' ':
+        tablero[fila][columna] = jugador
+        return True
+    else:
+        return False
+
+def verificar_estado(tablero):
+    # Verificar filas y columnas
+    for i in range(3):
+        if tablero[i][0] == tablero[i][1] == tablero[i][2] != ' ':
+            return tablero[i][0]
+        if tablero[0][i] == tablero[1][i] == tablero[2][i] != ' ':
+            return tablero[0][i]
+    
+    # Verificar diagonales
+    if tablero[0][0] == tablero[1][1] == tablero[2][2] != ' ':
+        return tablero[0][0]
+    if tablero[0][2] == tablero[1][1] == tablero[2][0] != ' ':
+        return tablero[0][2]
+    
+    # Verificar empate
+    empate = all(tablero[i][j] != ' ' for i in range(3) for j in range(3))
+    if empate:
+        return 'Empate'
+    
+    return None
+
+def jugar_triqui():
+    tablero = inicializar_tablero()
+    jugador_actual = 'X'
+    
+    while True:
+        imprimir_tablero(tablero)
+        print(f"Turno del jugador {jugador_actual}")
+        
+        fila = int(input("Ingrese el número de fila (0, 1, o 2): "))
+        columna = int(input("Ingrese el número de columna (0, 1, o 2): "))
+        
+        if realizar_jugada(tablero, jugador_actual, fila, columna):
+            estado = verificar_estado(tablero)
+            
+            if estado:
+                imprimir_tablero(tablero)
+                if estado == 'Empate':
+                    print("¡Es un empate!")
+                else:
+                    print(f"¡El jugador {estado} ha ganado!")
+                break
+            
+            if jugador_actual == 'X':
+              jugador_actual = 'O' 
+            else: 
+              jugador_actual= 'X'
+
+jugar_triqui()
+'''
