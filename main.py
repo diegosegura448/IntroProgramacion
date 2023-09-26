@@ -405,4 +405,52 @@ def jugar_triqui():
               jugador_actual= 'X'
 
 jugar_triqui()
+#Listas
+def listas1():
+  lista=[]
+  lista2=[]
+  
+  for i in range(1,6):
+    lista.append(input("Ingrese una cadena: "))
+    
+  lista2= lista.copy()
+  lista2.reverse()
+  
+  for j in lista2:
+    print(j)
+
+listas1()
+
+
+import random
+def lista2():
+  lista_numeros = []
+  
+  for indice in range(1,11):
+  	lista_numeros.append(random.randint(1,10))
+  
+  for numero in lista_numeros:
+  	print("Para el número",numero," su cuadrado es: ",numero ** 2," y su cubo es: ",numero ** 3)
+
+lista2()
+
+
+def notasLista():
+  notas = []
+  for indice in range(1,6):
+  	while True:
+  		nota = int(input("Introduce la nota: "))
+  		if nota>=0 and nota<=10: break
+  	notas.append(nota)
+  
+  print("Notas: ")  
+  for nota in notas:
+  	print(nota)
+    
+  print()
+  print("Nota media: ",sum(notas)/len(notas))
+  print("Nota max: ",max(notas))
+  print("Nota min: ",min(notas))
+
+notasLista()
 '''
