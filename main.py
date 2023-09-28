@@ -453,4 +453,46 @@ def notasLista():
   print("Nota min: ",min(notas))
 
 notasLista()
-'''
+
+def listaNumbers():
+  numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  for i in range(1, 11):
+      print(numbers[-i], end=", ")
+ 
+  #numbers.reverse()
+  #for number in numbers:
+  #  print(number, end=", ")
+listaNumbers()
+
+def materiasL():
+  materias = ["Matemáticas", "Física", "Química", "Historia", "Lengua"]
+  for i in range(len(materias)-1, -1, -1):
+      nota = float(input("¿Qué nota has sacado en " + materias[i] + "? "))
+      if nota >= 3:
+          materias.pop(i)
+  print("Tienes que repetir " + str(materias))
+
+materiasL()
+
+def letasL():
+  alfabeto = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+  for i in range(len(alfabeto), 1, -1):
+      if i % 3 == 0:
+          alfabeto.pop(i-1)
+  print(alfabeto)
+
+letasL()
+
+def palindromo():
+  palabraIng = input("Introduce una palabra: ")
+  palabra = palabraIng.lower()
+  palabra_inv = palabra.lower()
+  word = list(palabra)
+  palabra_inv = list(palabra_inv)
+  palabra_inv.reverse()
+  if word == palabra_inv:
+      print("Es un palíndromo")
+  else:
+      print("No es un palíndromo")
+
+palindromo()'''
