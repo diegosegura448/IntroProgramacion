@@ -496,3 +496,63 @@ def palindromo():
       print("No es un palíndromo")
 
 palindromo()'''
+def menu():
+  print ("""************
+    Lista de Contactos
+    ************
+    Menu
+    1) Crear Contacto
+    2) Buscar Contacto
+    3) Eliminar Contacto
+    4) Mostrar Contactos
+    5) Salir
+    """)
+
+def agregar_contacto(nombre, telefono, correo, contactos):
+    contacto = [nombre, telefono, correo]
+    contactos.append(contacto)
+
+def buscar_contacto(nombre,contactos):
+  for contacto in contactos:
+    if contacto[0] == nombre:
+        print(f"Nombre: {contacto[0]}, Teléfono: {contacto[1]}, Correo: {contacto[2]}")
+
+def elimina_contacto(nombre,contactos):
+  for contacto in contactos:
+    if contacto[0] == nombre:
+      contactos.pop(contactos.index(contacto))
+
+  print(contactos)
+
+def Lista_contactos():
+  contactos = []
+  menu()
+  opcion=0
+  while opcion!=5:
+    opcion= int(input("Selecione Opción\n"))
+
+    if opcion == 1:
+      nombrec=input("Escribe el nombre del contacto: ")
+      telefonoc=input("Escribe el telefono del contacto: ")
+      correoc=input("Escribe el email del contacto: ")
+      agregar_contacto(nombrec, telefonoc, correoc, contactos)
+
+    elif opcion == 2:
+      nombreb=input("Escriba el nombre del contacto que desea buscar: ")
+      buscar_contacto(nombreb,contactos)
+
+    elif opcion==3:
+      nombreE=input("Escriba el nombre del contacto a eliminar: ")
+      elimina_contacto(nombreE,contactos)
+      
+    elif opcion==4:
+      print("Los contactos son: ", contactos)
+
+    elif opcion==5:
+      print("Gracias por usar la app!. bye")
+      break
+    
+    else:
+      print("Opción Invalida")
+      
+Lista_contactos()
