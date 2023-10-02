@@ -496,47 +496,18 @@ def palindromo():
       print("No es un palíndromo")
 
 palindromo()
-import random
-def juego_cartas():  
-  palos = ["Corazones", "Diamantes", "Picas", "Tréboles"]
-  valores = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"]
-  
-  mazo = []
-  
-  for palo in palos:
-      for valor in valores:
-          carta = [valor, palo]
-          mazo.append(carta)  
-  
-  random.shuffle(mazo)
-
-  return mazo
-  
-def repartir_cartas(numero_jugadores, cartas_por_jugador):
-    mazo= juego_cartas()
-    jugadores = [[] for _ in range(numero_jugadores)]
-    for _ in range(cartas_por_jugador):
-        for jugador in jugadores:
-            carta = mazo.pop()
-            jugador.append(carta)
-
-    for i, jugador in enumerate(jugadores):
-        print(f"Jugador {i + 1}: {jugador}")
-
-repartir_cartas(4,5)
-  '''
 
 def menu():
   print ("""************
-    Lista de Contactos
-    ************
-    Menu
-    1) Crear Contacto
-    2) Buscar Contacto
-    3) Eliminar Contacto
-    4) Mostrar Contactos
-    5) Salir
-    """)
+Lista de Contactos
+************
+Menu
+1) Crear Contacto
+2) Buscar Contacto
+3) Eliminar Contacto
+4) Mostrar Contactos
+5) Salir
+""")
 
 def agregar_contacto(nombre, telefono, correo, contactos):
     contacto = [nombre, telefono, correo]
@@ -552,7 +523,7 @@ def elimina_contacto(nombre,contactos):
     if contacto[0] == nombre:
       contactos.pop(contactos.index(contacto))
 
-  print(contactos)
+  #print(contactos)
 
 def Lista_contactos():
   contactos = []
@@ -586,3 +557,36 @@ def Lista_contactos():
       print("Opción Invalida")
       
 Lista_contactos()
+'''
+
+import random
+
+def juego_cartas():  
+  palos = ["Corazones", "Diamantes", "Picas", "Tréboles"]
+  valores = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"]
+  
+  mazo = []
+  
+  for palo in palos:
+      for valor in valores:
+          carta = [valor, palo]
+          mazo.append(carta)  
+  
+  random.shuffle(mazo)
+
+  return mazo
+  
+def repartir_cartas(numero_jugadores, cartas_por_jugador):
+    mazo= juego_cartas()
+    jugadores = [[] for _ in range(numero_jugadores)]
+    for _ in range(cartas_por_jugador):
+        for jugador in jugadores:
+            carta = mazo.pop()
+            jugador.append(carta)
+
+    for i, jugador in enumerate(jugadores):
+        print(f"Jugador {i + 1}: {jugador}")
+
+repartir_cartas(4,2)
+  
+
