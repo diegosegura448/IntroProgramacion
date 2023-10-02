@@ -495,7 +495,37 @@ def palindromo():
   else:
       print("No es un palíndromo")
 
-palindromo()'''
+palindromo()
+import random
+def juego_cartas():  
+  palos = ["Corazones", "Diamantes", "Picas", "Tréboles"]
+  valores = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"]
+  
+  mazo = []
+  
+  for palo in palos:
+      for valor in valores:
+          carta = [valor, palo]
+          mazo.append(carta)  
+  
+  random.shuffle(mazo)
+
+  return mazo
+  
+def repartir_cartas(numero_jugadores, cartas_por_jugador):
+    mazo= juego_cartas()
+    jugadores = [[] for _ in range(numero_jugadores)]
+    for _ in range(cartas_por_jugador):
+        for jugador in jugadores:
+            carta = mazo.pop()
+            jugador.append(carta)
+
+    for i, jugador in enumerate(jugadores):
+        print(f"Jugador {i + 1}: {jugador}")
+
+repartir_cartas(4,5)
+  '''
+
 def menu():
   print ("""************
     Lista de Contactos
@@ -533,7 +563,7 @@ def Lista_contactos():
 
     if opcion == 1:
       nombrec=input("Escribe el nombre del contacto: ")
-      telefonoc=input("Escribe el telefono del contacto: ")
+      telefonoc=input("Escribe el teléfono del contacto: ")
       correoc=input("Escribe el email del contacto: ")
       agregar_contacto(nombrec, telefonoc, correoc, contactos)
 
