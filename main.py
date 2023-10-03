@@ -557,7 +557,6 @@ def Lista_contactos():
       print("Opción Invalida")
       
 Lista_contactos()
-'''
 
 import random
 
@@ -589,4 +588,119 @@ def repartir_cartas(numero_jugadores, cartas_por_jugador):
 
 repartir_cartas(4,2)
   
+#Ventas
+def menu():
+  print ("""************
+Registrar Ventas
+************
+Menu
+1) Crear venta
+2) Mostrar Total ventas
+3) Salir
+""")
+  
+def registrar_venta(producto, cantidad, precio,ventas):
+    venta = [producto, cantidad, precio]
+    ventas.append(venta)
 
+def ventas():
+  opcion=0
+  ventas = []
+  menu()
+  
+  while opcion != 3:
+    
+    opcion= int(input("Selecione Opción\n"))
+    
+    if opcion==1:
+      productov=input("Ingrese que producto vendio: ")
+      cantidadv=int(input("Ingrese la cantidad de unidades vendidas: "))
+      preciov=float(input("Ingrese el valor del producto: "))
+    
+      registrar_venta(productov, cantidadv, preciov,ventas) 
+      
+    elif opcion == 2:  
+      total_ventas = sum(venta[1] * venta[2] for venta in ventas)
+      print(f"Total de ventas diarias: ${total_ventas}")
+
+    elif opcion == 3:
+      print("Gracias por usar la aplicación. Bye!")
+      break
+    else:
+      print("Opción invalida")
+
+ventas()
+
+#suma Matrices
+def suma_matrices(matriz1, matriz2):
+    resultado = []
+    for i in range(len(matriz1)):
+        fila = []
+        for j in range(len(matriz1[i])):
+            suma = matriz1[i][j] + matriz2[i][j]
+            fila.append(suma)
+        resultado.append(fila)
+    return resultado
+
+matriz1 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+matriz2 = [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+resultado = suma_matrices(matriz1, matriz2)
+print(resultado)
+
+#Transpuesta Matrices
+def matriz_transpuesta(matriz):
+    transpuesta = []
+    for j in range(len(matriz[0])):
+        fila = []
+        for i in range(len(matriz)):
+            fila.append(matriz[i][j])
+        transpuesta.append(fila)
+    return transpuesta
+
+matriz = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+matriz_transpuesta = matriz_transpuesta(matriz)
+print(matriz_transpuesta)
+
+#Multiplicar matrices
+def multiplicar_matrices(matriz1, matriz2):
+    resultado = []
+    for i in range(len(matriz1)):
+        fila = []
+        for j in range(len(matriz2[0])):
+            suma = 0
+            for k in range(len(matriz2)):
+                suma += matriz1[i][k] * matriz2[k][j]
+            fila.append(suma)
+        resultado.append(fila)
+    return resultado
+
+matriz1 = [[1, 2], [3, 4]]
+matriz2 = [[5, 6], [7, 8]]
+resultado = multiplicar_matrices(matriz1, matriz2)
+print(resultado)
+
+#maximo de matriz
+def encontrar_maximo(matriz):
+    maximo = matriz[0][0]
+    for fila in matriz:
+        for elemento in fila:
+            if elemento > maximo:
+                maximo = elemento
+    return maximo
+
+matriz = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+maximo = encontrar_maximo(matriz)
+print(maximo)
+
+def producto_escalar(matriz, escalar):
+    filas = len(matriz)
+    columnas = len(matriz[0])
+    resultado = [[0 for _ in range(columnas)] for _ in range(filas)]
+    
+    for i in range(filas):
+        for j in range(columnas):
+            resultado[i][j] = matriz[i][j] * escalar
+    
+    return resultado
+
+  '''
