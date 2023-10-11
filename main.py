@@ -703,4 +703,27 @@ def producto_escalar(matriz, escalar):
     
     return resultado
 
-  '''
+  
+#diccionarios
+#divisa
+def divisaSimbol():
+  monedas = {'Euro':'€', 'Dollar':'$', 'Yen':'¥'}
+  moneda = input("Introduce una divisa: ")
+  if moneda.title() in monedas:
+      print(monedas[moneda.title()])
+  else:
+      print("La divisa no está.")
+
+#numero al cuadrado llave
+def numeroCuadrado():
+  numero = int(input("Dime un número:"))
+  cuadrados = {}
+  
+  for num in range(1,numero+1):
+      cuadrados[num] = num ** 2
+  for num, valor in cuadrados.items():
+      print("%d -> %d" % (num,valor))
+
+numeroCuadrado()
+'''
+
