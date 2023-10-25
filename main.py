@@ -823,4 +823,36 @@ def eliminaImparSet()
   numbers = {x for x in numbers if x % 2 == 0}
   print(numbers)
 
-eliminaImparSet()'''
+eliminaImparSet()
+
+#nombres de primaria y secundaria
+
+def cargaNombre(alumnos):
+  nombre= input("Nombre: ")
+  while nombre != "x":
+    alumnos.add(nombre)
+    nombre= input("Nombre: ")
+  return alumnos
+
+def fMain():
+  primaria=set()
+  secundaria=set()
+  print("Alumnos de primaria:")
+  primaria=cargaNombre(primaria)
+
+  print("Alumnos de secundaria:")
+  primaria=cargaNombre(secundaria)
+  
+  print("Nombre de todos los alumnos:")
+  for nombre in primaria | secundaria:
+    print(nombre)
+    
+  print("Nombres que se repiten:")
+  for nombre in primaria & secundaria:
+    print(nombre)
+
+  print("Nombres de primaria que no se repiten en secundaria:")
+  for nombre in primaria - secundaria:
+    print(nombre)
+
+'''
