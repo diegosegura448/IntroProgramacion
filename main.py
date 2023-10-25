@@ -804,5 +804,23 @@ def clienteDic():
       opcion = input('Menú de opciones\n(1) Añadir cliente\n(2) Eliminar cliente\n(3) Mostrar cliente\n(4) Listar clientes\n(5) Listar clientes preferencial\n(6) Terminar\nElige una opción:')
 
 clienteDic()
-'''
 
+#Conjuntos
+ #subconjunto
+def subconjunto():
+  set1 = {1, 2, 3, 4, 5}
+  set2 = {2, 3, 4}  
+  
+  is_subset = set2.issubset(set1)
+  print(f'set2 es subconjunto de set1: {is_subset}')
+  
+subconjunto()
+
+#Elimina impares del set
+def eliminaImparSet()
+  numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}  
+  
+  numbers = {x for x in numbers if x % 2 == 0}
+  print(numbers)
+
+eliminaImparSet()'''
